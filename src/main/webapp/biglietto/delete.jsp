@@ -35,7 +35,7 @@
 					</dl>
 
 					<dl class="row">
-						<dt class="col-sm-3 text-right">Destinazioen:</dt>
+						<dt class="col-sm-3 text-right">Destinazione:</dt>
 						<dd class="col-sm-9">${bigliettoInPagina.getDestinazione()}</dd>
 					</dl>
 

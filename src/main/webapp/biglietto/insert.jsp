@@ -10,6 +10,25 @@
 <jsp:include page="../header.jsp" />
 
 <title>Inserisci Nuovo Elemento</title>
+<script>
+function validateForm() {
+  var provenienza = document.forms["myForm"]["provenienza"].value;
+  var destinazione = document.forms["myForm"]["destinazione"].value;
+  var prezzo = document.forms["myForm"]["prezzo"].value;
+
+  if (provenienza == "" || destinazione == "" || prezzo == "") {
+    alert("I campi con * sono obbligatori");
+    return false;
+  }
+
+  if (isNaN(prezzo)) {
+    alert("Il prezzo deve essere un numero");
+    return false;
+  }
+
+  return true;
+}
+</script>
 </head>
 <body class="d-flex flex-column h-100">
 
@@ -53,7 +72,7 @@
 
 
 					<form method="post" action="ExecuteInsertBigliettoServlet"
-						class="row g-3" novalidate="novalidate">
+						class="row g-3" novalidate="novalidate" name="myForm" onsubmit="return validateForm()">
 
 						<c:set var="bigliettoInPagina" value="${insert_biglietto_attr}"></c:set>
 
